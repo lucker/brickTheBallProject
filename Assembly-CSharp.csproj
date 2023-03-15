@@ -56,9 +56,14 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/MonoBundle/Addins/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/scripts/brick.cs" />
-    <Compile Include="Assets/scripts/ball.cs" />
-    <Compile Include="Assets/scripts/platform.cs" />
+    <Compile Include="Assets/Scripts/Powers/MultiplyBalls.cs" />
+    <Compile Include="Assets/Scripts/Powers/Powers.cs" />
+    <Compile Include="Assets/Scripts/Brick.cs" />
+    <Compile Include="Assets/brickMovment.cs" />
+    <Compile Include="Assets/Scripts/Powers/PowerInterface.cs" />
+    <Compile Include="Assets/Scripts/Powers/IncreasePlatformPower.cs" />
+    <Compile Include="Assets/Scripts/Ball.cs" />
+    <Compile Include="Assets/Scripts/Platform.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

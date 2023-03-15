@@ -1,21 +1,31 @@
-﻿<Properties StartupConfiguration="{78AA116C-BF21-7CA3-563E-7AD1CBA03A59}|">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+﻿<Properties StartupConfiguration="{4985E7FC-4E83-B956-D26E-C29CBEAD0F43}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="72c833ed-9332-4f85-85a2-98a7473bc1f5" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="661e68e0-e0fb-4093-8197-db961a0eda67" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/Ball.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/ihor.sokhan/Documents/brickTheBallProject/Assets/Scripts/Powers/MultiplyBalls.cs" relfile="Assets/Scripts/Powers/MultiplyBalls.cs" line="14" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Brick.cs">
     <Files>
-      <File FileName="Assets/scripts/Ball.cs" Line="31" Column="38" />
+      <File FileName="Assets/Scripts/Ball.cs" Line="8" Column="51" />
+      <File FileName="Assets/Scripts/Platform.cs" Line="7" Column="31" />
+      <File FileName="Assets/Scripts/Brick.cs" Line="17" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="BrickTheBallProject" expanded="True" />
+          <Node name="BrickTheBallProject" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Powers" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

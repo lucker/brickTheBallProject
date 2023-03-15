@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platform : MonoBehaviour
+public class Platform : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    private float _speed = 0.5f;
     private bool _isLeft;
     private bool _isRight;
     private bool _wallLeft;
     private bool _wallRight;
-    // Start is called before the first frame update
-    void Start()
+
+
+    public float getSpeed()
     {
-        
+        return _speed;
     }
 
     private void FixedUpdate()
@@ -33,12 +34,8 @@ public class platform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-    }
+        //Debug.Log("Platform collision " + collision.gameObject.name);
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Wall Trigger" + collision.gameObject.name);
         if (collision.gameObject.name == "LeftWall")
         {
             _wallLeft = true;
@@ -72,5 +69,15 @@ public class platform : MonoBehaviour
         {
             _isRight = false;
         }
+    }
+
+    public bool getIsRight()
+    {
+        return _isRight;
+    }
+
+    public bool getIsLeft()
+    {
+        return _isLeft;
     }
 }
