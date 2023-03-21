@@ -5,52 +5,46 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidBody2D;
-    [SerializeField] private float _constantSpeed;
-    private int _friction = 5;
-    private Vector3 _velocity;
-   
-    // Start is called before the first frame update
-    void Start()
-    {
-        _velocity = new Vector3(10.0f, 10.0f, 0);
-    }
+    [SerializeField] private AudioSource _audio;
+    [SerializeField] private AudioClip _audioClip;
+    private float _friction = 0.2f;
+    private float _constantSpeed = 10.0f;
 
     private void FixedUpdate()
     {
-        float velocityMagnitude = _rigidBody2D.velocity.magnitude;
-        _rigidBody2D.velocity = _constantSpeed * _rigidBody2D.velocity.normalized;
-        //Debug.Log("Velocity: " + velocityMagnitude);
+        BrickTheBallState brickTheBallState = BrickTheBallState.GetInstance();
 
+        if (brickTheBallState.getState() == GameState.GameInProcess)
+        {
+            _rigidBody2D.velocity = _constantSpeed * _rigidBody2D.velocity.normalized;
+
+            if (_rigidBody2D.velocity.y < 5.0f && _rigidBody2D.velocity.y >= 0) {
+                _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x, 5.0f);
+            }
+
+            if (_rigidBody2D.velocity.y <= 0 && _rigidBody2D.velocity.y < -5.0f)
+            {
+                _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x, -5.0f);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Debug.Log("Ball trigger");
         if (collision.gameObject.name == "Platform")
         {
             Platform platform = collision.gameObject.GetComponent<Platform>();
-            float speed = platform.getSpeed();
-            //Debug.Log("speed " + speed); ;
-            if (platform.getIsLeft())
-            {
-                _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x - _friction * platform.getSpeed(), _rigidBody2D.velocity.y);
-            }
-
-            if (platform.getIsRight())
-            {
-                _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x + _friction * platform.getSpeed(), _rigidBody2D.velocity.y);
-            }
-
-           
-           
-            /*if (collision.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D platformRigidBody))
-            {
-                Debug.Log("Platform velocity " + platformRigidBody.velocity);
-            }*/
+            Rigidbody2D rigidbody2D = platform.GetComponent<Rigidbody2D>();
+            _rigidBody2D.velocity += _friction * rigidbody2D.velocity;
+   
         }
-    
-        /*if (collision.gameObject.name == "Brick")
-        {
-            Destroy(collision.gameObject);
-        }*/
+        //_audio.PlayOneShot(_audioClip);
+    }
+
+    public void AddForce()
+    {
+        //Debug.Log("AddForce");
+        _rigidBody2D.AddForce(new Vector2(10f, 50f));
     }
 }

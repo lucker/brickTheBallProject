@@ -11,12 +11,12 @@ public enum PowerTypes
 public abstract class Powers : MonoBehaviour
 {
     [SerializeField] private PowerTypes _powerType;
+    private float _constantSpeed = 5.0f;
     public PowerTypes Type => _powerType;
 
     private void FixedUpdate()
     {
-        
-        transform.position -= new Vector3(0, 0.05f, 0);
+        transform.position += _constantSpeed * Vector3.down * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
