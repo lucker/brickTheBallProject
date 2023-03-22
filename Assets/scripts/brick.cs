@@ -18,24 +18,47 @@ public class Brick : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        BrickTheBallState brickTheBallState = BrickTheBallState.GetInstance();
+        Debug.Log("mode:" + brickTheBallState.mode + "easy: " + brickTheBallState.EASY);
+
         if (_type == BrickTypes.breakable)
         {
-            int randNumber = Random.Range(1, 100);
+            int randNumber = 0;
+            int randNumber2 = 0;
+
+            if (brickTheBallState.mode == brickTheBallState.EASY)
+            {
+                Debug.Log("3213");
+                randNumber = Random.Range(1, 50);
+                randNumber2 = Random.Range(1, 4);
+            }
+
+            if (brickTheBallState.mode == brickTheBallState.MEDIUM)
+            {
+                randNumber = Random.Range(1, 100);
+                randNumber2 = Random.Range(1, 10);
+            }
+
+            if (brickTheBallState.mode == brickTheBallState.HARD)
+            {
+                randNumber = Random.Range(1, 200);
+                randNumber2 = Random.Range(1, 20);
+            }
+            Debug.Log("mode:" + brickTheBallState.mode + "easy: " + brickTheBallState.EASY + "RandomNumber: " + randNumber2);
+
             if (randNumber == 1)
             {
                 Instantiate(_increasePlatformPower, transform.position, Quaternion.identity);
             }
 
-            randNumber = Random.Range(1, 10);
-
-            if (randNumber == 2)
+            if (randNumber2 == 2)
             {
                 Instantiate(_multiplyBalls, transform.position, Quaternion.identity);
             }
 
             Destroy(gameObject);
 
-            BrickTheBallState brickTheBallState = BrickTheBallState.GetInstance();
+           
             brickTheBallState.points += POINTS;
         }
         //Debug.Log("Brick collision = " + collision.gameObject.name + "Position: " + transform.position);

@@ -1,20 +1,20 @@
 ﻿<Properties StartupConfiguration="{4985E7FC-4E83-B956-D26E-C29CBEAD0F43}|">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3caba7bd-86ee-4d0d-9882-9ec0f9fd0c79" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ihor.sokhan/Documents/brickTheBallProject/Assets/Scripts/Powers/MultiplyBalls.cs" relfile="Assets/Scripts/Powers/MultiplyBalls.cs" line="12" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Brick.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BrickTheBallState.cs">
     <Files>
-      <File FileName="Assets/Scripts/Menu/Menu.cs" Line="21" Column="34" />
-      <File FileName="Assets/Scripts/LoseZone.cs" Line="5" Column="19" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="29" Column="50" />
-      <File FileName="Assets/Scripts/BrickTheBallState.cs" Line="30" Column="42" />
-      <File FileName="Assets/Scripts/Ball.cs" Line="11" Column="40" />
-      <File FileName="Assets/Scripts/Platform.cs" Line="73" Column="68" />
-      <File FileName="Assets/Scripts/Powers/Powers.cs" Line="17" Column="1" />
-      <File FileName="Assets/Scripts/Brick.cs" Line="22" Column="47" />
+      <File FileName="Assets/Scripts/Menu/Menu.cs" />
+      <File FileName="Assets/Scripts/LoseZone.cs" />
+      <File FileName="Assets/Scripts/BrickTheBallState.cs" Line="7" Column="35" />
+      <File FileName="Assets/Scripts/Ball.cs" />
+      <File FileName="Assets/Scripts/Platform.cs" />
+      <File FileName="Assets/Scripts/Brick.cs" />
+      <File FileName="Assets/Scripts/Powers/MultiplyBalls.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,6 +24,7 @@
               <Node name="Scripts" expanded="True">
                 <Node name="Menu" expanded="True" />
                 <Node name="Powers" expanded="True" />
+                <Node name="BrickTheBallState.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -31,7 +32,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="29b76ffc-4a73-44de-9baa-8bdc61fdce14" />
-  <MultiItemStartupConfigurations />
 </Properties>

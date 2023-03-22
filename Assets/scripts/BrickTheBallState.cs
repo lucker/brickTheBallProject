@@ -5,10 +5,14 @@ public sealed class BrickTheBallState
 {
     public const int LEVEL_1 = 1;
     public const int MAX_LEVEL = 2;
+    public int EASY = 0;
+    public int MEDIUM = 1;
+    public int HARD = 2;
     private static BrickTheBallState _instance;
     private GameState _state;
     public int level;
     public int points;
+    public int mode;
     private BrickTheBallState() { }
 
     public static BrickTheBallState GetInstance()
@@ -18,6 +22,7 @@ public sealed class BrickTheBallState
             _instance._state = GameState.InMainMenu;
             _instance.level = LEVEL_1;
             _instance.points = 0;
+            _instance.mode = _instance.EASY;
         }
 
         return _instance;

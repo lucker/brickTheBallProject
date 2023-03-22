@@ -18,13 +18,14 @@ public class Ball : MonoBehaviour
         {
             _rigidBody2D.velocity = _constantSpeed * _rigidBody2D.velocity.normalized;
 
-            if (_rigidBody2D.velocity.y < 5.0f && _rigidBody2D.velocity.y >= 0) {
-                _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x, 5.0f);
+            //Debug.Log(_rigidBody2D.velocity);
+            if (_rigidBody2D.velocity.y < 3.0f && _rigidBody2D.velocity.y >= 0) {
+                _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x, 3.0f);
             }
 
-            if (_rigidBody2D.velocity.y <= 0 && _rigidBody2D.velocity.y < -5.0f)
+            if (_rigidBody2D.velocity.y <= 0 && _rigidBody2D.velocity.y > -3.0f)
             {
-                _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x, -5.0f);
+                _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x, -3.0f);
             }
         }
     }
